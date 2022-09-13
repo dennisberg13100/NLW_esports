@@ -1,24 +1,59 @@
-// Componentes / propriedades
+import './styles/main.css'
+import logo from './assets/Logo.svg'
 
-interface buttonProps {
-  title: string;
-}
-
-function Button(props: buttonProps) {
-  return (
-    <button>
-      {props.title}
-    </button>
-  )
-}
 
 function App() {
   return (
-  <div>
-    <Button title="send 1"/>
-    <Button title="send 2"/>
-    <Button title="send 3"/>
-    <Button title="Hello World"/>
+  <div className="max-w-[1344px] mx-auto flex items-center flex-col">
+    <img src={logo} alt='Logo' className='w-52'/>
+    <h1 className='text-6xl text-white font-black mt-20'>
+      Seu <span className="bg-nlw-gradient bg-clip-text text-transparent">duo</span> está aqui.
+    </h1>
+    <div className="grid grid-cols-6 gap-6 mt-16">
+      <a href="" className="relative rounded-lg overflow-hidden">
+        <img src="/img1.png" alt="" className="w-full"/>
+        <div className="m-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0 ">
+          <strong className="text-white block">Leage of Legends</strong>
+          <span  className="text-zinc-300 text-sm block mt-1">4 anúncios</span>
+        </div>
+      </a>
+      <a href="" className="relative rounded-lg overflow-hidden">
+        <img src="/img2.png" alt="" className="w-full"/>
+        <div className="m-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0 ">
+          <strong className="text-white block">Dota 2</strong>
+          <span  className="text-zinc-300 text-sm block mt-1">4 anúncios</span>
+        </div>
+      </a>
+      <a href="" className="relative rounded-lg overflow-hidden">
+        <img src="/img3.png" alt="" className="w-full"/>
+        <div className="m-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0 ">
+          <strong className="text-white block">Counter Strike</strong>
+          <span  className="text-zinc-300 text-sm block mt-1">4 anúncios</span>
+        </div>
+      </a>
+      <a href="" className="relative rounded-lg overflow-hidden">
+        <img src="/img4.png" alt="" className="w-full"/>
+        <div className="m-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0 ">
+          <strong className="text-white block">Apex</strong>
+          <span  className="text-zinc-300 text-sm block mt-1">4 anúncios</span>
+        </div>
+      </a>
+      <a href="" className="relative rounded-lg overflow-hidden">
+        <img src="/img5.png" alt="" className="w-full"/>
+        <div className="m-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0 ">
+          <strong className="text-white block">Fortnite</strong>
+          <span  className="text-zinc-300 text-sm block mt-1">4 anúncios</span>
+        </div>
+      </a>
+      <a href="" className="relative rounded-lg overflow-hidden">
+        <img src="/img6.png" alt="" className="w-full"/>
+        <div className="m-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0 ">
+          <strong className="text-white block">World Of Warcraft</strong>
+          <span  className="text-zinc-300 text-sm block mt-1">4 anúncios</span>
+        </div>
+      </a>
+      
+    </div>
   </div>
   )
 }
