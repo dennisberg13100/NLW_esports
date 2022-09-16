@@ -78,7 +78,7 @@ app.get('/game/:id/ads', async (req, res) => {
     return res.status(200).send(ads.map((ad) => {
         return {
             ...ad,
-            wedays: ad.weekDays.split(','),
+            weekDays: ad.weekDays.split(','),
             houreStart: convertMinutesToHouresString(ad.houreStart),
             houreEnd: convertMinutesToHouresString(ad.houreEnd)
         }
