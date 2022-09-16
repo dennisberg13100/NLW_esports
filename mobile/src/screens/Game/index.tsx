@@ -11,6 +11,7 @@ import { Image, Text } from 'react-native'
 import { Heading } from '../../components/Heading'
 import { DuoCard, DuoCardProps } from '../../components/DuoCard'
 import { useEffect, useState } from 'react'
+import { DuoMatch } from '../../components/DuoMatch' 
 
 export function Game() {
 
@@ -19,9 +20,17 @@ export function Game() {
     const game = route.params as GameParams
 
     const [ duos, setDuos ] = useState<DuoCardProps[]>([])
-    
+    const [ discorDuoSelected, setDiscordDuoSelected ] = useState('')
+
+
     function handelGoBack() {
         navigation.goBack()
+    }
+
+    async function getDiscordUser(adsId: string) {
+        fetch(`http://192.168.100.120:3333/ad/${adsId}/discord`)
+        .then(res => res.json())
+        .then(data => setDiscordDuoSelected(data.discord))
     }
 
     useEffect(() => {
@@ -71,7 +80,7 @@ export function Game() {
                     renderItem={({item})=> (
                         <DuoCard 
                             data={item}
-                            onConnect={() => {}} 
+                            onConnect={() => getDiscordUser(item.id)} 
                         />
                     )}
                     horizontal
@@ -88,7 +97,11 @@ export function Game() {
                 />
                 
                 
-               
+               <DuoMatch 
+                    visible={discorDuoSelected.length === 0 ? false : true}
+                    discord={discorDuoSelected}
+                    onClose={() => setDiscordDuoSelected('')}
+               />
             </SafeAreaView>
         </Background>   
     )
